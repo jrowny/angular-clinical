@@ -1,7 +1,10 @@
 <div class="hero-unit">
   <h1>'Allo, 'Allo!</h1>
   <h3>Providers</h3>
-  <ul class="unstyled">
+  <!-- <ul class="unstyled">
     <li ng-repeat="provider in providers">{{provider.id}}</li>
+  </ul> -->
+  <ul class="unstyled">
+    <li ng-repeat="encounter in encounters">{{encounter.patient.firstName}}</li>
   </ul>
 </div>
