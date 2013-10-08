@@ -5,7 +5,7 @@ angular.module('clinicalApp').factory('encounterService', function ($resource) {
     search: {
       method: 'GET',
       headers: {
-        'RemoteUser': 'jhornsby',
+        'RemoteUser': 'jjjjjjj',
         'Content-Type': 'application/json'
       }
     }
