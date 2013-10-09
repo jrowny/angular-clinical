@@ -13,8 +13,8 @@
       <tr ng-click="selectRow()" ng-repeat="encounter in encounters" data-id="{{encounter.id}}">
         <td class="statusContainer">
           <div class='status' data-help='authStatus'>
-            <i>statusName</i>
-            <i class="pull-right">statusDate</i>
+            <i>{{encounter.actions | statusName}}</i>
+            <i class="pull-right">{{encounter.actions | statusDate | date:'MMM dd, yyyy'}}</i>
           </div>
           <div data-help='authPayer'>
             {{encounter.actors | patientPrimaryPayer}}
@@ -47,21 +47,6 @@
         </td>
       </tr>
     </tbody>
-  </table>
-</div>
-
-<a href="#myModal" open-dialog role="button" class="btn">Add something</a>
-
-<div ng-controller="SomeCtrl">
-  <input type="text" ng-model="blub" /> Value {{blub}}
-  <button open-dialog class="btn btn-primary">Test</button>
-</div>
-
-<div class="modal hide fade" id="myModal" ng-controller="ModalCtrl">
- <div class="modal-body">
-  <p>Body: {{data}}</p>
-</div>
-
-</div>
-
+    </table>
+  </div>
 </div>

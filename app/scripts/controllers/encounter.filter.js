@@ -23,3 +23,27 @@ angular.module('clinicalApp').filter('patientPrimaryPayer', function() {
     return primaryName;
   };
 });
+
+angular.module('clinicalApp').filter('statusName', function() {
+  return function(actions) {
+    var statusName = '';
+    actions.forEach(function(action) {
+      if(action.type === 'AUTO_AUTH') {
+        statusName = action.status;
+      }
+    });
+    return statusName;
+  };
+});
+
+angular.module('clinicalApp').filter('statusDate', function() {
+  return function(actions) {
+    var statusName = '';
+    actions.forEach(function(action) {
+      if(action.type === 'AUTO_AUTH') {
+        statusName = action.date;
+      }
+    });
+    return statusName;
+  };
+});
