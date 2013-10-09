@@ -1,10 +1,50 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <h3>Providers</h3>
-  <!-- <ul class="unstyled">
-    <li ng-repeat="provider in providers">{{provider.id}}</li>
-  </ul> -->
-  <ul class="unstyled">
-    <li ng-repeat="encounter in encounters">{{encounter.patient.firstName}}</li>
-  </ul>
+<div id="encounter-list">
+  <table id="encounter-table" class="table table-fixed clinical-patients">
+    <thead>
+     <tr>
+      <th style="width: 45%"><span data-help="000">Status</span></th>
+      <th style="width: 20%"><span data-help="001">Patient</span></th>
+      <th style="width: 20%"><span data-help="002">Provider</span></th>
+      <th style="width: 15%"><span data-help="003">Request</span></th>
+    </tr>
+  </thead>
+  <tbody id="encounter-tbody">
+  <tr ng-repeat="encounter in encounters" data-id="{{encounter.id}}">
+      <td class="statusContainer">
+        <div class='status' data-help='authStatus'>
+          <i>statusName</i>
+          <i class="pull-right">statusDate</i>
+        </div>
+        <div data-help='authPayer'>
+          payer
+        </div>
+        <div data-help='authSubscriber'>
+          subscriberId
+        </div>
+        <div class="createNewAuth">
+          <a href="#" id="createNewAuth">
+            <i class="icon-edit"></i>New Auth
+          </a>
+        </div>
+      </td>
+      <td>
+        <i class="patient-name" >patientName</i>
+        <br />
+        <i data-help="patientBirthday">dob</i>
+      </td>
+      <td>
+        <i>provider</i>
+        <br />
+        <i>npi</i>
+      </td>
+      <td>
+        <i>requestType</i>
+        <br />
+        <i>requestDate</i>
+        <br />
+        <i > <i class="icon-file icon-idicator"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
