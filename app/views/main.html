@@ -1,50 +1,67 @@
-<div id="encounter-list">
-  <table id="encounter-table" class="table table-fixed clinical-patients">
-    <thead>
-     <tr>
-      <th style="width: 45%"><span data-help="000">Status</span></th>
-      <th style="width: 20%"><span data-help="001">Patient</span></th>
-      <th style="width: 20%"><span data-help="002">Provider</span></th>
-      <th style="width: 15%"><span data-help="003">Request</span></th>
-    </tr>
-  </thead>
-  <tbody id="encounter-tbody">
-  <tr ng-repeat="encounter in encounters" data-id="{{encounter.id}}">
-      <td class="statusContainer">
-        <div class='status' data-help='authStatus'>
-          <i>statusName</i>
-          <i class="pull-right">statusDate</i>
-        </div>
-        <div data-help='authPayer'>
-          payer
-        </div>
-        <div data-help='authSubscriber'>
-          subscriberId
-        </div>
-        <div class="createNewAuth">
-          <a href="#" id="createNewAuth">
-            <i class="icon-edit"></i>New Auth
-          </a>
-        </div>
-      </td>
-      <td>
-        <i class="patient-name" >patientName</i>
-        <br />
-        <i data-help="patientBirthday">dob</i>
-      </td>
-      <td>
-        <i>provider</i>
-        <br />
-        <i>npi</i>
-      </td>
-      <td>
-        <i>requestType</i>
-        <br />
-        <i>requestDate</i>
-        <br />
-        <i > <i class="icon-file icon-idicator"></i>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div ng-app="clinicalApp">
+  <div ng-controller="EncounterCtrl" id="encounter-list">
+    <table id="encounter-table" class="table table-fixed clinical-patients">
+      <thead>
+       <tr>
+        <th style="width: 45%"><span data-help="000">Status</span></th>
+        <th style="width: 20%"><span data-help="001">Patient</span></th>
+        <th style="width: 20%"><span data-help="002">Provider</span></th>
+        <th style="width: 15%"><span data-help="003">Request</span></th>
+      </tr>
+    </thead>
+    <tbody id="encounter-tbody">
+      <tr ng-click="selectRow()" ng-repeat="encounter in encounters" data-id="{{encounter.id}}">
+        <td class="statusContainer">
+          <div class='status' data-help='authStatus'>
+            <i>statusName</i>
+            <i class="pull-right">statusDate</i>
+          </div>
+          <div data-help='authPayer'>
+            {{encounter.actors | patientPrimaryPayer}}
+          </div>
+          <div data-help='authSubscriber'>
+            subscriberId
+          </div>
+          <div class="createNewAuth">
+            <a href="#" ng-click="createNewAuth()">
+              <i class="icon-edit"></i>New Auth
+            </a>
+          </div>
+        </td>
+        <td>
+          <i class="patient-name" >{{encounter.patient | patientNameFirstLast }}</i>
+          <br />
+          <i data-help="patientBirthday">{{encounter.patient | patientDob | date:'MMM dd, yyyy'}}</i>
+        </td>
+        <td>
+          <i>provider</i>
+          <br />
+          <i>npi</i>
+        </td>
+        <td>
+          <i>requestType</i>
+          <br />
+          <i>requestDate</i>
+          <br />
+          <i > <i class="icon-file icon-idicator"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<a href="#myModal" open-dialog role="button" class="btn">Add something</a>
+
+<div ng-controller="SomeCtrl">
+  <input type="text" ng-model="blub" /> Value {{blub}}
+  <button open-dialog class="btn btn-primary">Test</button>
+</div>
+
+<div class="modal hide fade" id="myModal" ng-controller="ModalCtrl">
+ <div class="modal-body">
+  <p>Body: {{data}}</p>
+</div>
+
+</div>
+
 </div>
