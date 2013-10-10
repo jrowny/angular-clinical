@@ -6,4 +6,3 @@ angular.module('clinicalApp').directive('clinicalHeader', function () {
     templateUrl: 'views/header.html'
   };
 });
-
