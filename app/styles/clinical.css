@@ -1,0 +1,137 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/**
+ * clinical.auth.header.view
+ */
+.clinical-subnav {
+  background-color: #d9d9d6;
+  height: 40px;
+}
+.clinical-subnav input {
+  margin-top: 4px;
+}
+.app-title {
+  margin-top: 10px;
+  font-size: 24px;
+}
+.dropdown-menu .menu-check .menu-icon-check {
+  margin-left: -20px;
+  display: none;
+}
+.dropdown-menu .menu-selected .menu-icon-check {
+  display: inline-block;
+}
+#learnMore a,
+#learnMore i {
+  color: #74c474;
+}
+.wrap > .mast-head {
+  padding-top: 90px;
+}
+tbody tr {
+  height: 5em;
+}
+.statusContainer {
+  position: relative;
+}
+.statusContainer .createNewAuth {
+  position: absolute;
+  bottom: 0px;
+}
+/**
+ * responsive overrides
+ */
+@media (max-width: 979px) {
+  .wrap > .mast-head {
+    padding-top: 0;
+  }
+}
+ul {
+  list-style-type: none;
+}
+.selected {
+  background: lightblue;
+}
+.chat-container {
+  margin-left: 4px !important;
+  border: 2px solid #cccccc;
+}
+.chat-container .chat-header {
+  color: white;
+  font-weight: bold;
+  background-color: #8B8D8E;
+  line-height: 20px;
+  padding: 8px;
+  margin: 0px;
+  min-height: 1.5em;
+}
+.chat-container .chat-box {
+  width: 95%;
+  margin: 4px;
+}
+.chat-container .counter-container {
+  margin-right: 4px;
+}
+.chat-container .button-container {
+  margin-left: 4px;
+}
+.chat-container .btn-primary {
+  width: 200%;
+  margin-bottom: 10px;
+}
+.chat-container .toggle-container {
+  padding-left: 10%;
+}
+.chat-container .toggle-container .btn-mini {
+  width: 100%;
+}
+#messages-container .scrollable {
+  margin: 0 0 0 0;
+}
+#messages-container .scrollable .message-container {
+  border: 2px solid #cccccc;
+}
+#messages-container .scrollable .message-container .message-name {
+  font-weight: bold;
+}
+#messages-container .scrollable .message-container .message-post {
+  margin-left: 12px;
+}
+.status {
+  min-height: 1.5em;
+}
+#authForm {
+  width: 49%;
+  border-right: 1px solid #e5e5e5;
+}
+#patientDemographics {
+  width: 49%;
+}
+#patientDemographics h3 {
+  margin-top: 0px;
+}
