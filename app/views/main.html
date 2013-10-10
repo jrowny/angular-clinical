@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody id="encounter-tbody">
-      <tr ng-click="selectRow()" ng-repeat="encounter in encounters" data-id="{{encounter.id}}">
+      <tr ng-click="selectRow()" ng-repeat="encounter in encounters | filter:search" data-id="{{encounter.id}}">
         <td class="statusContainer">
           <div class='status' data-help='authStatus'>
             <i>{{encounter.actions | statusName}}</i>
