@@ -9,7 +9,23 @@
 		<div class="well span6">content6</div>
 		<div class="well span6">
 			Patient Demographics<br>
-			Encounter ID: {{encounter.id}}
+
+			<dl>
+				<dt>
+					Patient First Name: {{encounter.patient.firstName}}
+				</dt>
+				<dt>
+					Patient Last Name: {{encounter.patient.lastName}}
+				</dt>
+				<dt>
+					Gender: {{encounter.patient.gender | lowercase}}
+				</dt>
+				<dt>
+					Patient Class: {{encounter.patient.patientClass | lowercase}}
+				</dt>
+			</dl>
+
+			<!-- Encounter ID: {{encounter.id}} -->
 		</div>
 	</div>
 
