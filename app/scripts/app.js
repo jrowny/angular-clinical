@@ -6,7 +6,7 @@ angular.module('clinicalApp', ['ngRoute', 'ngResource']).config(function ($route
     templateUrl: 'views/main.html',
     controller: 'EncounterCtrl'
   })
-  .when('/auth', {
+  .when('/auth/:id', {
     templateUrl: 'views/new.html',
     controller: "EncounterCtrl"
   })

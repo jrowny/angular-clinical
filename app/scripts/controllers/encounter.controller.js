@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, providerService, encounterService, singleEncounter) {
+angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $routeParams ,providerService, encounterService, singleEncounter) {
   providerService.search({
     limit: 2000,
     organizationId : '0001194'
@@ -17,6 +17,14 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, prov
   }, function(data) {
     $scope.encounters = data.encounters;
   });
+
+  if($routeParams.id){
+    encounterService.search({
+      encounterId: $routeParams.id
+    }, function(data) {
+      $scope.encounter = data.encounter;
+    });
+  }
 
   $scope.createNewAuth = function(encounter) {
     singleEncounter.selectedEncounter = encounter;
