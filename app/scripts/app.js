@@ -7,7 +7,7 @@ angular.module('clinicalApp', ['ngRoute', 'ngResource']).config(function ($route
     controller: 'EncounterCtrl'
   })
   .when('/:id', {
-    templateUrl: 'views/new.html',
+    templateUrl: 'views/patient.detail.html',
     controller: "EncounterCtrl"
   })
   .otherwise({
