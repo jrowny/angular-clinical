@@ -1,8 +1,7 @@
-<div class="chat-container">
+<div class="span4 chat-container">
  <h5 class="chat-header">
-  <span class="patient-name-container">{{name}}</span>
+  <span class="patient-name-container">{{encounter.patient | patientNameFirstLast}}</span>
 </h5>
-
 <div class="chat-body">
   <div class="message-post-container">
     <form accept-charset="UTF-8" action="#" method="POST">
@@ -10,7 +9,7 @@
         <textarea id="chatBox" class="chat-box"  placeholder="{{chatPlaceholder}}" rows="2"></textarea>
       </div>
       <div class="counter-container pull-right">
-        <span class="muted" id="counter">{{maxCount}}</span>
+        <span class="muted" id="counter">500</span>
       </div>
       <div class="button-container btn-group btn-group-chat">
         <input type="submit" id="comment" class="btn btn-primary btn-small btn-comment disabled" disabled="disabled" value="Comment"/>

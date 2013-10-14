@@ -1,9 +1,15 @@
 'use strict';
 
-angular.module('clinicalApp').directive('messages', function () {
+angular.module('clinicalApp').directive('chatContainer', function() {
   return {
-    restrict: 'E',
-    replace: true,
-    templateUrl: 'views/chat.container.html'
+    restrict: 'A',
+    scope: {
+      encounter: '='
+    },
+    templateUrl: 'views/chat.container.html',
+
+    link: function(scope, elem, attrs) {
+
+    }
   };
 });
