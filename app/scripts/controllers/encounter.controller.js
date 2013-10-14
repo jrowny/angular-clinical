@@ -26,10 +26,6 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     });
   }
 
-  $scope.toggle = function() {
-    $scope.isVisible = ! $scope.isVisible;
-  };
-
   $scope.isVisible = false;
 
   $scope.createNewAuth = function(encounter) {
@@ -38,14 +34,13 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
 
   $scope.showChat = true;
 
-  $scope.toggle = function() {
-    $scope.showChat = !$scope.showChat;
-  };
-
   $scope.selectedIndex = -1;
+
+  $scope.selectedEncounter = -1;
 
   $scope.getSelectedRow = function($index) {
     $scope.selectedIndex = $index;
+    $scope.selectedEncounter = $scope.encounters[$scope.selectedIndex];
   };
 
   $scope.encounter = singleEncounter.selectedEncounter;
