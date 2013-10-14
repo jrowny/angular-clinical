@@ -27,6 +27,13 @@ module.exports = function (grunt) {
   } catch (e) {}
 
   grunt.initConfig({
+    less: {
+      developement: {
+        files : {
+          'app/styles/clin.css': 'app/styles/clin.less'
+        }
+      }
+    },
     yeoman: yeomanConfig,
     watch: {
       coffee: {
@@ -315,6 +322,8 @@ module.exports = function (grunt) {
       }
     }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
