@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $routeParams ,providerService, encounterService, singleEncounter) {
+angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $routeParams ,providerService, encounterService, singleEncounter, formConfiguration) {
   providerService.search({
     limit: 2000,
     organizationId : '0001194'
@@ -26,6 +26,10 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     });
   }
 
+  formConfiguration.search({}, function(data) {
+    $scope.formConfiguration = data;
+  });
+
   $scope.isVisible = false;
 
   $scope.createNewAuth = function(encounter) {
@@ -44,4 +48,9 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
   };
 
   $scope.encounter = singleEncounter.selectedEncounter;
+
+  $scope.updateCount = function($element) {
+    var count = $element.val().length();
+    $scope.count = count;
+  };
 });
