@@ -49,8 +49,7 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
 
   $scope.encounter = singleEncounter.selectedEncounter;
 
-  $scope.updateCount = function($element) {
-    var count = $element.val().length();
-    $scope.count = count;
+  $scope.handleKeypress = function(key) {
+    console.log("Key press");
   };
 });

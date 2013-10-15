@@ -28,9 +28,6 @@
               <a href="#/{{encounter.id}}" ng-click="createNewAuth(encounter)">
                 <i class="icon-edit"></i>Detail
               </a>
-              <a ng-click="toggle()">
-                <i class="icon-edit"></i>Show Chat
-              </a>
             </div>
           </td>
           <td>
@@ -54,6 +51,6 @@
       </tbody>
     </table>
   </div>
-  <div chat-container ng-show="true" encounter="selectedEncounter" ></div>
+  <div chat-container ng-show="true" encounter="selectedEncounter" count="500"></div>
 </div>
 </div>
