@@ -8,6 +8,10 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     $scope.providers = data.providers;
   });
 
+  $scope.getServiceTypeDropDown = function(requestTypeValue) {
+    console.log('hello world');
+  }
+
   encounterService.search({
     actorType: 'PROVIDER_REQUESTING',
     actorIds: '0001194',
