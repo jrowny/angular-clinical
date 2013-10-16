@@ -5,6 +5,9 @@ angular.module('clinicalApp').directive('newAuth', function() {
 		restrict: 'A',
 		scope: {
 			// arguments here
+			providers: '=',
+			requestTypeDropDown: '=',
+			testValue: '='
 		},
 		templateUrl: 'views/new.auth.html',
  

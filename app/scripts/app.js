@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clinicalApp', ['ngRoute', 'ngResource']).config(function ($routeProvider) {
+angular.module('clinicalApp', ['ngRoute', 'ngResource','ui.bootstrap', '$strap.directives']).config(function ($routeProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'views/main.html',
@@ -8,9 +8,11 @@ angular.module('clinicalApp', ['ngRoute', 'ngResource']).config(function ($route
   })
   .when('/:id', {
     templateUrl: 'views/patient.detail.html',
-    controller: "EncounterCtrl"
+    controller: "PatientDetailCtrl"
   })
   .otherwise({
     redirectTo: '/'
   });
 });
+
+
