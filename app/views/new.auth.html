@@ -1,25 +1,19 @@
 <form>
 	Auth Request Type <br>
-	<select name="authRequestType" ng-model="currentRequestType" ng-options="type as type for type in requestTypeDropDown.values" ng-change="test()">
+	<select name="authRequestType" ng-model="currentRequestType" ng-options="type as type for type in requestTypeDropDown.values" ng-change="populateDropDowns(currentRequestType)">
 		
 	</select><br>
 
 
 
 	Type of Service: <br>
-	<select name="authRequestType">
-		<option value="placeholder">Placeholder</option>
-		<option value="placeholder">Placeholder</option>
-		<option value="placeholder">Placeholder</option>
-		<option value="placeholder">Placeholder</option>
+	<select name="authServiceType" ng-model="currentServiceType" ng-options="type as type for type in serviceTypeDropDown.values">
+		
 	</select><br>
 
 	Place of Service: <br>
-	<select name="authRequestType">
-		<option value="placeholder">Placeholder</option>
-		<option value="placeholder">Placeholder</option>
-		<option value="placeholder">Placeholder</option>
-		<option value="placeholder">Placeholder</option>
+	<select name="placeOfService" ng-model="currentPlaceOfService" ng-options="type as type for type in servicePlaceDropDown.values">
+		
 	</select><br>
 
 	Service Date:<br>
@@ -56,23 +50,26 @@
 	<br>
 
 	Diagnosis Code:<br>
-	<input type="textarea"> <a href="" class="btn">+</a>
+	<input type="textarea" ng-model="currentDiagnosisCode"> <a href="" class="btn" ng-click="addDiagnosisCode(currentDiagnosisCode)">+</a>
 	<br>
 
 	Procedure Code:<br>
-	<input type="textarea"> <a href="" class="btn">+</a>
+	<input type="textarea" ng-model="currentProcedureCode"> <a href="" class="btn" ng-click="addProcedureCode(currentProcedureCode)">+</a>
 	<br>
 
 	Refer-to-Provider: <br>
-	<select name="authRequestType" ng-model="currentProvider" ng-options="provider.id as provider.firstName for provider in providers">
+	<select name="referToProvider" ng-model="currentProvider" ng-options="provider.id as provider.id + '-' + provider.lastName + ', ' + provider.firstName for provider in providers">
 		
-	</select><br>{{currentProvider}}
+	</select><br>
 
-	Rever-to-Facility: <br>
-	<select name="authRequestType">
+	Refer-to-Facility: <br>
+	<select name="referToFacility" ng-model="currentFacility">
 		<option value="placeholder">Placeholder</option>
 		<option value="placeholder">Placeholder</option>
 		<option value="placeholder">Placeholder</option>
 		<option value="placeholder">Placeholder</option>
 	</select><br>
+
+	<a href="" ng-click="submit()" class='btn btn-info'>Submit</a>
+
 </form>
