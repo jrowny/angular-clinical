@@ -4,11 +4,10 @@ angular.module('clinicalApp', ['ngRoute', 'ngResource','ui.bootstrap', '$strap.d
   $routeProvider
   .when('/', {
     templateUrl: 'views/main.html'
-    //controller: 'EncounterCtrl'
   })
   .when('/:id', {
     templateUrl: 'views/patient.detail.html',
-    controller: "PatientDetailCtrl"
+    controller: 'PatientDetailCtrl'
   })
   .otherwise({
     redirectTo: '/'
