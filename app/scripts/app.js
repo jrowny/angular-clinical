@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clinicalApp', ['ngRoute', 'ngResource','ui.bootstrap', '$strap.directives']).config(function ($routeProvider) {
+angular.module('clinicalApp', ['ngRoute', 'ngResource', '$strap.directives']).config(function ($routeProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'views/main.html'
