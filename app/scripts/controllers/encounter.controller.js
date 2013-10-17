@@ -35,12 +35,12 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
 
   $scope.addNewPatients = function() {
     $scope.encounters = $scope.encounters.concat(encounterService.getNewEncounters());
-    //encounterService.clearNewEncounters();
   }
 
   $scope.$on('newEncountersUpdated', function(evt, message) {
     console.log("encounters changed it up!");
     $scope.addNewPatients();
+    encounterService.clearNewEncounters();
   });
 
   $scope.createNewAuth = function(encounter) {
