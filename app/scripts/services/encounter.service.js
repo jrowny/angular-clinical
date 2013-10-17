@@ -12,7 +12,7 @@ angular.module('clinicalApp').factory('encounterService', function ($resource, $
   });
 
   var newEncounters = [];
-  var filterTerms = [];
+  var filterTerms = {};
 
   EncounterService.pushNewEncounter = function(encounter) {
     newEncounters.push(encounter);
@@ -25,6 +25,16 @@ angular.module('clinicalApp').factory('encounterService', function ($resource, $
 
   EncounterService.clearNewEncounters = function() {
     newEncounters = [];
+  }
+
+  EncounterService.setFilterTerms = function(filterTermsObj) {
+    filterTerms = filterTermsObj;
+    $rootScope.$broadcast('filterTermsUpdated');
+    encounterService.getFilterTerms(); //filter terms coming in here, must redo the search with them
+  }
+
+  EncounterService.getFilterTerms = function() {
+    return filterTerms;
   }
 
   return EncounterService;

@@ -10,11 +10,15 @@ angular.module('clinicalApp').directive('filterModal', ['formConfiguration', 'en
 
 		link: function(scope, elem, attrs) {
 			scope.submit = function() {
-				console.log(scope.authRequestType);
-				console.log(scope.dateRange);
-				console.log(scope.facilityActorIds);
-				console.log(scope.payer);
-				console.log(scope.actionStatus);
+				var searchTermsObj = {};
+				searchTermsObj.authRequestType = scope.authRequestType;
+				searchTermsObj.dateRange = scope.dateRange;
+				searchTermsObj.actorIds = scope.facilityActorIds; //
+				searchTermsObj.payer = scope.payer;
+				searchTermsObj.actionStatuses = scope.actionStatuses; //
+				searchTermsObj.actionType = "AUTO_AUTH"; //
+				searchTermsObj.limit = 10;
+				encounterService.setFilterTerms(searchTermsObj);
 			}
 		}
 	};

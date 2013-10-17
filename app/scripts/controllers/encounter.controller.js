@@ -42,6 +42,10 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     encounterService.clearNewEncounters();
   });
 
+  $scope.$on('filterTermsUpdated', function(evt, message) {
+    console.log('filter terms have updated');
+  });
+
   $scope.createNewAuth = function(encounter) {
     singleEncounter.selectedEncounter = encounter;
   };
