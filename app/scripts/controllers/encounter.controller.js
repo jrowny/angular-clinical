@@ -35,7 +35,7 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
 
   $scope.addNewPatients = function() {
     $scope.encounters = $scope.encounters.concat(encounterService.getNewEncounters());
-  }
+  };
 
   $scope.$on('newEncountersUpdated', function(evt, message) {
     $scope.addNewPatients();
@@ -48,6 +48,8 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
 
   $scope.showChat = true;
 
+  $scope.count = 500;
+
   $scope.selectedIndex = -1;
 
   $scope.selectedEncounter = -1;
@@ -58,8 +60,4 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
   };
 
   $scope.encounter = singleEncounter.selectedEncounter;
-
-  $scope.handleKeypress = function(key) {
-    console.log("Key press");
-  };
 });
