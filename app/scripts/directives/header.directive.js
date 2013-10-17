@@ -8,9 +8,13 @@ angular.module('clinicalApp').directive('clinicalHeader', function () {
 
     link: function(scope, elem, attrs) {
 
-			scope.showModal = function() {
+			scope.showAddPatientModal = function() {
 				$('#patient-modal').modal("show");
 			}
+
+      scope.showFilterModal = function() {
+        $('#filter-modal').modal("show");
+      }
 
 		}
   };

@@ -4,6 +4,7 @@ angular.module('clinicalApp', ['ngRoute', 'ngResource','ui.bootstrap', '$strap.d
   $routeProvider
   .when('/', {
     templateUrl: 'views/main.html'
+    
     //controller: 'EncounterCtrl'
   })
   .when('/:id', {

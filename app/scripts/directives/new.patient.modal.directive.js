@@ -33,7 +33,9 @@ angular.module('clinicalApp').directive('newPatientModal', ['formConfiguration',
 				newPatientInfo.serviceDate = scope.datepicker.date.toDateString();
 
 				newEncounter.actors = [];
-				newEncounter.actors.push({brandName:newPatientInfo.payer});
+				newEncounter.actors.push({brandName:newPatientInfo.payer, name:newPatientInfo.payer, type:'PAYER_PRIMARY'});
+				newEncounter.actions = [];
+				newEncounter.actions.push({status:'ERROR_MISSING_DATA', type:'AUTO_AUTH'});
 				newEncounter.id = newPatientInfo.memberId;
 				newEncounter.patient = {};
 				newEncounter.patient.relationship = newPatientInfo.relationshipToSubscriber;

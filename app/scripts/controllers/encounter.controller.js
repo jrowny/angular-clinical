@@ -38,7 +38,6 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
   }
 
   $scope.$on('newEncountersUpdated', function(evt, message) {
-    console.log("encounters changed it up!");
     $scope.addNewPatients();
     encounterService.clearNewEncounters();
   });

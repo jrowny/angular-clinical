@@ -12,6 +12,7 @@ angular.module('clinicalApp').factory('encounterService', function ($resource, $
   });
 
   var newEncounters = [];
+  var filterTerms = [];
 
   EncounterService.pushNewEncounter = function(encounter) {
     newEncounters.push(encounter);
