@@ -9,11 +9,7 @@ angular.module('clinicalApp').directive('chatContainer', function() {
 
     templateUrl: 'views/chat.container.html',
 
-    controller: function($scope) {
-      $scope.chat = function() {
-        console.log('Chat');
-      };
-    },
+    controller: 'EncounterCtrl',
 
     link: function(scope, elem) {
       var chatbox = elem.find('textarea');
