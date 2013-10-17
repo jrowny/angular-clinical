@@ -9,6 +9,8 @@ angular.module('clinicalApp').directive('chatContainer', function() {
 
     templateUrl: 'views/chat.container.html',
 
+    controller: 'EncounterCtrl',
+
     link: function(scope, elem) {
       var chatbox = elem.find('textarea');
       chatbox.bind('keyup',function() {

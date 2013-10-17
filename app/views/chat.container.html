@@ -12,7 +12,7 @@
         <span class="muted" id="counter">{{count}}</span>
       </div>
       <div class="button-container btn-group btn-group-chat">
-        <input type="submit" id="comment" class="btn btn-primary btn-small btn-comment disabled" disabled="disabled" value="Comment"/>
+        <input id="comment" class="btn btn-primary btn-small btn-comment disabled" value="Comment" ng-click="chat()"/>
       </div>
     </form>
     <div messages-container messages="encounter.comments">
