@@ -4,10 +4,8 @@ angular.module('clinicalApp').directive('chatContainer', function() {
   return {
     scope: {
       encounter: '=',
-      ngModel: '='
+      count: '='
     },
-
-    controller: 'EncounterCtrl',
 
     templateUrl: 'views/chat.container.html',
 
@@ -16,7 +14,7 @@ angular.module('clinicalApp').directive('chatContainer', function() {
       chatbox.bind('keyup',function() {
         var chatCount = $(this).val().length;
         scope.$apply(function() {
-          scope.ngModel = 500 - chatCount;
+          scope.count = 500 - chatCount;
         });
       });
     }
