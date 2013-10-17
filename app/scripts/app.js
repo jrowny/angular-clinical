@@ -13,5 +13,3 @@ angular.module('clinicalApp', ['ngRoute', 'ngResource','ui.bootstrap', '$strap.d
     redirectTo: '/'
   });
 });
-
-
