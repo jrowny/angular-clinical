@@ -8,9 +8,6 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     $scope.providers = data.providers;
   });
 
-  $scope.getServiceTypeDropDown = function(requestTypeValue) {
-    console.log('hello world');
-  }
 
   encounterService.search({
     actorType: 'PROVIDER_REQUESTING',
@@ -35,6 +32,16 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
   });
 
   $scope.isVisible = false;
+
+  $scope.addNewPatients = function() {
+    $scope.encounters = $scope.encounters.concat(encounterService.getNewEncounters());
+    //encounterService.clearNewEncounters();
+  }
+
+  $scope.$on('newEncountersUpdated', function(evt, message) {
+    console.log("encounters changed it up!");
+    $scope.addNewPatients();
+  });
 
   $scope.createNewAuth = function(encounter) {
     singleEncounter.selectedEncounter = encounter;

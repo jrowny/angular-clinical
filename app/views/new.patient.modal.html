@@ -1,0 +1,39 @@
+<div id='patient-modal' class="modal hide fade modal-dialog" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h1>Add Patient</h1>
+	</div>
+
+	<div class="modal-body">
+		Payer:<br>
+		<select ng-model="currentPayer">
+			<option>Florida Blue</option>
+			<option>Humana</option>
+		</select><br>
+		Member ID:<br>
+		<input type='textarea' ng-model="currentMemberId"><br>
+		Relationship to Subscriber:<br>
+		<select ng-model="currentRelationship">
+			<option>Self</option>
+			<option>Spouse</option>
+			<option>Child</option>
+			<option>Other</option>
+		</select><br>
+		Last Name:<br>
+		<input type="textarea" ng-model="currentLastName"><br>
+		First Name:<br>
+		<input type="textarea" ng-model="currentFirstName"><br>
+		Birthdate:<br>
+		<div  class="control-group input-append">
+  			<input type="text" ng-model="datepicker.date" data-date-format="mm/dd/yyyy" bs-datepicker>
+			<button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<a href="" class="btn btn-info" ng-click="submit()" data-dismiss="modal">Submit</a>
+		<a href="" class="btn btn-warning" data-dismiss="modal">Cancel</a>
+	</div>
+
+
+</div>
