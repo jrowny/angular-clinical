@@ -2,24 +2,23 @@
 
 angular.module('clinicalApp').directive('chatContainer', function() {
   return {
-    restrict: 'A',
     scope: {
       encounter: '=',
-      count: '='
+      ngModel: '='
     },
+
+    controller: 'EncounterCtrl',
 
     templateUrl: 'views/chat.container.html',
 
-    link: function(scope, elem, attrs) {
-      scope.count = 500;
-
-      scope.toggle = function() {
-        console.log("Toggle");
-      };
-
-      scope.handleKeypress = function() {
-        console.log('Keypress');
-      };
+    link: function(scope, elem) {
+      var chatbox = elem.find('textarea');
+      chatbox.bind('keyup',function() {
+        var chatCount = $(this).val().length;
+        scope.$apply(function() {
+          scope.ngModel = 500 - chatCount;
+        });
+      });
     }
   };
 });
