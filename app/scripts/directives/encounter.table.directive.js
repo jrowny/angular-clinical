@@ -5,12 +5,18 @@ angular.module('clinicalApp').directive('encounterTableInsert', ['encounterServi
     restrict: 'A',
     templateUrl: 'views/encounter.table.html',
     scope: {
-      encounters : "=",
-      search: "="
+      encounters : '=',
+      search: '=',
+      index: '='
     },
 
-    link: function(scope, elem, attrs) {
+    controller: 'EncounterCtrl',
 
+    link: function(scope, elem, attrs, controller) {
+      scope.getSelectedRow = function($index) {
+        console.log($index);
+        scope.index = $index;
+      };
     }
   };
 }]);
