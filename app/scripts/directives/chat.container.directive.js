@@ -11,14 +11,11 @@ angular.module('clinicalApp').directive('chatContainer', function() {
 
     controller: 'EncounterCtrl',
 
-    link: function(scope, elem) {
-      var chatbox = elem.find('textarea');
-      chatbox.bind('keyup',function() {
-        var chatCount = $(this).val().length;
-        scope.$apply(function() {
-          scope.count = 500 - chatCount;
-        });
-      });
+    link: function(scope) {
+      scope.countStart = scope.count;
+      scope.updateCount = function(chatCount) {
+        scope.count = scope.countStart - chatCount.length;
+      };
     }
   };
 });
