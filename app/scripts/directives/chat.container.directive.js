@@ -9,18 +9,20 @@ angular.module('clinicalApp').directive('chatContainer', ['encounterService', fu
 
     templateUrl: 'views/chat.container.html',
 
-    controller: 'EncounterCtrl',
-
-    link: function(scope, elem, attrs, controller) {
+    link: function(scope, elem) {
       scope.countStart = scope.count;
+
       scope.updateCount = function(chatText) {
         scope.count = scope.countStart - chatText.length;
       };
-      scope.addMessage = function(message) {
-        debugger;
 
+      scope.addMessage = function(message) {
+        encounterService.save({
+          id: scope.encounter.id
+        });
         scope.resetChat();
       };
+
       scope.resetChat = function() {
         scope.chatText = '';
         scope.updateCount(scope.chatText);
