@@ -16,6 +16,9 @@ angular.module('clinicalApp').directive('chatContainer', function() {
       scope.updateCount = function(chatCount) {
         scope.count = scope.countStart - chatCount.length;
       };
+      scope.addMessage = function(message) {
+
+      };
     }
   };
 });
