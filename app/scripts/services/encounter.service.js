@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clinicalApp').factory('encounterService', function ($resource, $rootScope) {
-  var EncounterService = $resource('http://localhost:port/v2/encounters/:encounterId', {encounterId:'@id', port: ':8280'}, {
+  var EncounterService = $resource('http://localhost:port/v2/encounters/:encounterId', {encounterId:'@encounterId', port: ':8280'}, {
     search: {
       method: 'GET',
       headers: {
