@@ -144,3 +144,6 @@ ul {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+#comment {
+ width: auto;
+}
