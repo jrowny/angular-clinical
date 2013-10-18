@@ -30,7 +30,7 @@ angular.module('clinicalApp').factory('encounterService', function ($resource, $
   EncounterService.setFilterTerms = function(filterTermsObj) {
     filterTerms = filterTermsObj;
     $rootScope.$broadcast('filterTermsUpdated');
-    encounterService.getFilterTerms(); //filter terms coming in here, must redo the search with them
+    EncounterService.getFilterTerms(); //filter terms coming in here, must redo the search with them
   }
 
   EncounterService.getFilterTerms = function() {

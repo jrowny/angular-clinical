@@ -43,7 +43,10 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
   });
 
   $scope.$on('filterTermsUpdated', function(evt, message) {
-    console.log('filter terms have updated');
+    var filterTerms = encounterService.getFilterTerms();
+    encounterService.search(filterTerms, function(data) {
+      $scope.encounters = data.encounters;
+    });
   });
 
   $scope.createNewAuth = function(encounter) {

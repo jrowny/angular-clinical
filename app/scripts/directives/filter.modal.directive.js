@@ -17,6 +17,7 @@ angular.module('clinicalApp').directive('filterModal', ['formConfiguration', 'en
 				searchTermsObj.payer = scope.payer;
 				searchTermsObj.actionStatuses = scope.actionStatuses; //
 				searchTermsObj.actionType = "AUTO_AUTH"; //
+				searchTermsObj.actorType = "PROVIDER_REQUESTING";
 				searchTermsObj.limit = 10;
 				encounterService.setFilterTerms(searchTermsObj);
 			}
