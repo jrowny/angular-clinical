@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clinicalApp').directive('chatContainer', function() {
+angular.module('clinicalApp').directive('chatContainer', ['encounterService', function(encounterService) {
   return {
     scope: {
       encounter: '=',
@@ -11,14 +11,20 @@ angular.module('clinicalApp').directive('chatContainer', function() {
 
     controller: 'EncounterCtrl',
 
-    link: function(scope, elem) {
-      var chatbox = elem.find('textarea');
-      chatbox.bind('keyup',function() {
-        var chatCount = $(this).val().length;
-        scope.$apply(function() {
-          scope.count = 500 - chatCount;
-        });
-      });
+    link: function(scope, elem, attrs, controller) {
+      scope.countStart = scope.count;
+      scope.updateCount = function(chatText) {
+        scope.count = scope.countStart - chatText.length;
+      };
+      scope.addMessage = function(message) {
+        debugger;
+
+        scope.resetChat();
+      };
+      scope.resetChat = function() {
+        scope.chatText = '';
+        scope.updateCount(scope.chatText);
+      };
     }
   };
-});
+}]);

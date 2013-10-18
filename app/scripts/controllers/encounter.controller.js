@@ -67,8 +67,4 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
   };
 
   $scope.encounter = singleEncounter.selectedEncounter;
-
-  $scope.chat = function() {
-    console.log('Chat');
-  };
 });
