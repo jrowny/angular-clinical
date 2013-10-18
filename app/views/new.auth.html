@@ -1,28 +1,28 @@
 <form>
-	Auth Request Type <br>
-	<select name="authRequestType" ng-model="currentRequestType" ng-options="type as type for type in requestTypeDropDown.values" ng-change="populateDropDowns(currentRequestType)">
-		
-	</select><br>
+  Auth Request Type <br>
+  <select name="authRequestType" ng-model="currentRequestType" ng-options="type as type for type in requestTypeDropDown.values" ng-change="populateDropDowns(currentRequestType)">
+    
+  </select><br>
 
 
 
-	Type of Service: <br>
-	<select name="authServiceType" ng-model="currentServiceType" ng-options="type as type for type in serviceTypeDropDown.values">
-		
-	</select><br>
+  Type of Service: <br>
+  <select name="authServiceType" ng-model="currentServiceType" ng-options="type as type for type in serviceTypeDropDown.values">
+    
+  </select><br>
 
-	Place of Service: <br>
-	<select name="placeOfService" ng-model="currentPlaceOfService" ng-options="type as type for type in servicePlaceDropDown.values">
-		
-	</select><br>
+  Place of Service: <br>
+  <select name="placeOfService" ng-model="currentPlaceOfService" ng-options="type as type for type in servicePlaceDropDown.values">
+    
+  </select><br>
 
-	Service Date:<br>
-	<div  class="control-group input-append">
-  		<input type="text" ng-model="datepicker.date" data-date-format="mm/dd/yyyy" bs-datepicker>
-		<button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
-	</div>
+  Service Date:<br>
+  <div  class="control-group input-append">
+    <input type="text" ng-model="datepicker.date" data-date-format="mm/dd/yyyy" bs-datepicker>
+    <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
+  </div>
 
-	<!-- <div ng-controller="DatePickerCtrl">
+  <!-- <div ng-controller="DatePickerCtrl">
     <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
 
     <div class="well well-small pull-left" ng-model="dt">
@@ -42,34 +42,34 @@
     <button class="btn btn-small" ng-click="toggleMin()" tooltip="After today restriction">Min date</button> -->
 </div>
 
-	
+  
 </div>
 
 
 
-	<br>
+  <br>
 
-	Diagnosis Code:<br>
-	<input type="textarea" ng-model="currentDiagnosisCode"> <a href="" class="btn" ng-click="addDiagnosisCode(currentDiagnosisCode)">+</a>
-	<br>
+  Diagnosis Code:<br>
+  <input type="textarea" ng-model="currentDiagnosisCode"> <a href="" class="btn" ng-click="addDiagnosisCode(currentDiagnosisCode)">+</a>
+  <br>
 
-	Procedure Code:<br>
-	<input type="textarea" ng-model="currentProcedureCode"> <a href="" class="btn" ng-click="addProcedureCode(currentProcedureCode)">+</a>
-	<br>
+  Procedure Code:<br>
+  <input type="textarea" ng-model="currentProcedureCode"> <a href="" class="btn" ng-click="addProcedureCode(currentProcedureCode)">+</a>
+  <br>
 
-	Refer-to-Provider: <br>
-	<select name="referToProvider" ng-model="currentProvider" ng-options="provider.id as provider.id + '-' + provider.lastName + ', ' + provider.firstName for provider in providers">
-		
-	</select><br>
+  Refer-to-Provider: <br>
+  <select name="referToProvider" ng-model="currentProvider" ng-options="provider.id as provider.id + '-' + provider.lastName + ', ' + provider.firstName for provider in providers">
+    
+  </select><br>
 
-	Refer-to-Facility: <br>
-	<select name="referToFacility" ng-model="currentFacility">
-		<option value="placeholder">Placeholder</option>
-		<option value="placeholder">Placeholder</option>
-		<option value="placeholder">Placeholder</option>
-		<option value="placeholder">Placeholder</option>
-	</select><br>
+  Refer-to-Facility: <br>
+  <select name="referToFacility" ng-model="currentFacility">
+    <option value="placeholder">Placeholder</option>
+    <option value="placeholder">Placeholder</option>
+    <option value="placeholder">Placeholder</option>
+    <option value="placeholder">Placeholder</option>
+  </select><br>
 
-	<a href="" ng-click="submit()" class='btn btn-info'>Submit</a>
+  <a href="" ng-click="submit()" class='btn btn-info'>Submit</a>
 
 </form>
