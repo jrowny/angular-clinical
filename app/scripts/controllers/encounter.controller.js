@@ -53,6 +53,8 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     singleEncounter.selectedEncounter = encounter;
   };
 
+  $scope.index = -1;
+
   $scope.showChat = true;
 
   $scope.count = 500;
