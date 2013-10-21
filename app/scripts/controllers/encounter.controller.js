@@ -49,14 +49,6 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     });
   });
 
-  // $scope.$on('indexUpdated', function($index) {
-  //   $scope.getSelectedRow($scope.index);
-  // });
-
-  // $scope.$on('createNewAuth', function() {
-  //   $scope.createNewAuth($scope.encounter);
-  // })
-
   $scope.createNewAuth = function(encounter) {
     singleEncounter.selectedEncounter = encounter;
   };
