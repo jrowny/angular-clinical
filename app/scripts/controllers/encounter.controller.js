@@ -63,10 +63,14 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
 
   $scope.selectedEncounter = -1;
 
-  $scope.getSelectedRow = function($index) {
-    $scope.selectedIndex = $index;
-    $scope.selectedEncounter = $scope.encounters[$scope.selectedIndex];
-  };
+  $scope.$on('selectedRow', function(event, data) {
+    $scope.selectedIndex = data.rowIndex;
+    $scope.selectedEncounter = $scope.encounters[data.rowIndex];
+  });
+
+  $scope.$watch('selectedEncounter', function(selectedEncounter) {
+    $scope.$broadcast('selectedRowChange', { encounter: selectedEncounter });
+  });
 
   $scope.encounter = singleEncounter.selectedEncounter;
 });
