@@ -13,10 +13,7 @@ angular.module('clinicalApp').directive('encounterTableInsert', ['encounterServi
     controller: 'EncounterCtrl',
 
     link: function(scope, elem, attrs, controller) {
-      scope.getSelectedRow = function($index) {
-        console.log($index);
-        scope.index = $index;
-      };
+
     }
   };
 }]);
