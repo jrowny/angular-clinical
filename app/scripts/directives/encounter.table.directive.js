@@ -10,10 +10,6 @@ angular.module('clinicalApp').directive('encounterTableInsert', ['encounterServi
       index: '='
     },
 
-    controller: 'EncounterCtrl',
-
-    link: function(scope, elem, attrs, controller) {
-
-    }
+    controller: 'EncounterCtrl'
   };
 }]);
