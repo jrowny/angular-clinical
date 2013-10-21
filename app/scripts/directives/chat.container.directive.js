@@ -7,6 +7,8 @@ angular.module('clinicalApp').directive('chatContainer', ['encounterService', fu
       count: '='
     },
 
+    controller: 'EncounterCtrl',
+
     templateUrl: 'views/chat.container.html',
 
     link: function(scope, elem) {
