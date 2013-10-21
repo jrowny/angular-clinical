@@ -7,8 +7,6 @@ angular.module('clinicalApp').directive('chatContainer', ['encounterService', fu
       count: '='
     },
 
-    controller: 'EncounterCtrl',
-
     templateUrl: 'views/chat.container.html',
 
     link: function(scope, elem) {
@@ -29,6 +27,10 @@ angular.module('clinicalApp').directive('chatContainer', ['encounterService', fu
         scope.chatText = '';
         scope.updateCount(scope.chatText);
       };
+
+      scope.$on('selectedRowChange', function(data) {
+        console.log("Changed");
+      });
     }
   };
 }]);
