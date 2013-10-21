@@ -5,11 +5,15 @@ angular.module('clinicalApp').directive('encounterTableInsert', ['encounterServi
     restrict: 'A',
     templateUrl: 'views/encounter.table.html',
     scope: {
-      encounters : '=',
-      search: '=',
-      index: '='
+      search: '='
     },
 
-    controller: 'EncounterCtrl'
+    controller: 'EncounterCtrl',
+
+    link: function(scope) {
+      scope.getSelectedRow = function(index) {
+        scope.$broadcast('selectedRow', { rowIndex: index });
+      };
+    }
   };
 }]);
