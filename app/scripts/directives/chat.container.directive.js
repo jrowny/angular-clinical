@@ -28,7 +28,7 @@ angular.module('clinicalApp').directive('chatContainer', ['encounterService', fu
         scope.updateCount(scope.chatText);
       };
 
-      scope.$on('selectedRowChange', function(data) {
+      scope.$watch('encounter', function(data) {
         console.log("Changed");
       });
     }
